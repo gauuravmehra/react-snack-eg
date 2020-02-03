@@ -134,7 +134,8 @@
     "build-storybook": "build-storybook -c .storybook -o ./out",
     "esdoc": "esdoc -c .esdoc.json",
     "pretty": "prettier --write **/*.{js,json,css}",
-    "mock": "node ./canned.config.js"
+    "mock": "node ./canned.config.js",
+    "postbuild": "react-snap"
   },
   "babel": {
     "presets": [

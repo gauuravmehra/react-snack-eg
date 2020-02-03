@@ -16,12 +16,12 @@ import logger from '../../utils/logger';
 
 import type {
   EnhanceConfigType,
-  ClientDispatchActionsType,
-  StoreType,
-  NextComponentType,
-  ActionType,
-  Props,
-  State,
+    ClientDispatchActionsType,
+    StoreType,
+    NextComponentType,
+    ActionType,
+    Props,
+    State,
 } from './types';
 
 let applicationBootstrapActions = [];
@@ -112,7 +112,7 @@ export const getWrapperComponent = (
           typeof action === 'function'
             ? { ...action(extraProps) }
             : // $FlowFixMe eslint-disable-line
-              { ...action }
+            { ...action }
         )
       );
     }
@@ -285,19 +285,12 @@ export default (
     WrappedComponent.name ||
     'Component'})`;
 
-  const withConnect = connect(
-    mapStateToProps,
-    mapDispatchToProps
-  );
+  const withConnect = connect(mapStateToProps, mapDispatchToProps);
   const withRedux: Function = initRedux({
     key,
     reducer,
     saga,
   });
 
-  return compose(
-    withRedux,
-    withRouter,
-    withConnect
-  )(WrapperComponent);
+  return compose(withRedux, withRouter, withConnect)(WrapperComponent);
 };

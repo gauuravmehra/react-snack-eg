@@ -17,15 +17,48 @@
     "document": true,
     "window": true
   },
-  "plugins": ["jest", "flowtype", "prettier", "extra-rules", "compat"],
-  "extends": ["airbnb", "plugin:flowtype/recommended", "prettier"],
+  "plugins": [
+    "jest",
+    "flowtype",
+    "prettier",
+    "extra-rules",
+    "compat"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended",
+    "prettier"
+  ],
   "rules": {
-    "max-params": ["error", { "max": 7 }],
-    "max-statements": ["error", { "max": 100 }],
-    "max-lines": ["error", { "max": 1000 }],
+    "max-params": [
+      "error",
+      {
+        "max": 7
+      }
+    ],
+    "max-statements": [
+      "error",
+      {
+        "max": 100
+      }
+    ],
+    "max-lines": [
+      "error",
+      {
+        "max": 1000
+      }
+    ],
     "max-len": 0,
-    "complexity": ["error", { "max": 10 }],
-    "object-shorthand": ["warn", "properties"],
+    "complexity": [
+      "error",
+      {
+        "max": 10
+      }
+    ],
+    "object-shorthand": [
+      "warn",
+      "properties"
+    ],
     "array-callback-return": "error",
     "no-undef": "error",
     "extra-rules/no-commented-out-code": "error",
@@ -35,10 +68,13 @@
     "react/jsx-filename-extension": [
       "error",
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
       }
     ],
-    "prettier/prettier": "error",
+    "prettier/prettier": "off",
     "compat/compat": "error",
     "linebreak-style": "off"
   },
@@ -58,7 +94,10 @@
       }
     },
     {
-      "files": ["**/*.test.js", "**/*.spec.js"],
+      "files": [
+        "**/*.test.js",
+        "**/*.spec.js"
+      ],
       "env": {
         "jest/globals": true
       },
@@ -68,6 +107,8 @@
     }
   ],
   "settings": {
-    "polyfills": ["promises"]
+    "polyfills": [
+      "promises"
+    ]
   }
 }

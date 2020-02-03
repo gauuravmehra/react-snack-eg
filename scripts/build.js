@@ -13,6 +13,7 @@ process.on('unhandledRejection', err => {
 require('../config/env');
 
 const path = require('path');
+const paths = require('../config/paths');
 const chalk = require('chalk');
 const fs = require('fs-extra');
 const webpack = require('webpack');
@@ -45,7 +46,6 @@ const writeStatsJson = argv.indexOf('--stats') !== -1;
 // We require that you explicitly set browsers and do not fall back to
 // browserslist defaults.
 const { checkBrowsers } = require('react-dev-utils/browsersHelper');
-const paths = require('../config/paths');
 const config = require('../config/webpack.config.prod');
 
 checkBrowsers(paths.appPath, isInteractive)
@@ -146,7 +146,7 @@ function build(previousFileSizes) {
         console.log(
           chalk.yellow(
             '\nTreating warnings as errors because process.env.CI = true.\n' +
-              'Most CI servers set it automatically.\n'
+            'Most CI servers set it automatically.\n'
           )
         );
         return reject(new Error(messages.warnings.join('\n\n')));

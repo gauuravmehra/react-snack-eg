@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { hydrate, render } from "react-dom";
 import styles from './styles'; // eslint-disable-line no-unused-vars
 import App from './App';
 import {
@@ -19,9 +19,16 @@ initialiseGlobalReducer(globalReducers);
 setApplicationBootStrapActions(globalActions);
 setGlobalPageTransitionActions(globalPageTransitionActions);
 
-ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
-  document.getElementById('root')
-);
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+  hydrate(
+    <Router>
+      <App />
+    </Router>,
+    rootElement);
+} else {
+  render(
+    <Router>
+      <App />
+    </Router>, rootElement);
+}

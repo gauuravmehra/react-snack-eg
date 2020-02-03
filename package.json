@@ -137,6 +137,17 @@
     "mock": "node ./canned.config.js",
     "postbuild": "react-snap"
   },
+  "reactSnap": {
+    "source": "dist",
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    },
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
+  },
   "babel": {
     "presets": [
       "react-app"
